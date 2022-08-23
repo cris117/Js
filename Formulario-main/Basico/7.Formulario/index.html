@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario</title>
+</head>
+<body>
+    <form id="dataform" method="post"action="./backend/receive.php">
+        <label for="">nombre</label>
+        <input type="text"
+        id=" name"
+        name="name"
+     placeholder="introduce tu nombre"
+      minlength="3"
+      maxlength="50"
+      pattern=""
+      title="introduce al menos 3 caracteres maximo 50"
+      tabindex="0"
+      autofocus="true"
+      autocomplete="off"
+      required
+      ><br><br>
+      <select id="typedocument" name="typedocument">
+        <option value="nada" select="selected">selecione un tipo de documento</option>
+        <option value="cc"> cedula de identidad</option>
+        <option value="ti">tarjeta de idntidad</option>
+        <option value="ce">cedula de extranjeria</option>
+      </select  min="2" max="99" tabindex="1">
+       <label for="estado civil"> estados cicvil</label>
+       <input type="radio" name="ecivil"id="ecivil" value="soltero">soltero
+       <input type="radio" name="ecivil"id="ecivil"value="casado">casado
+       <input type="radio" name="ecivil"id="ecivil" value="divorciado">divorciado
+       <input type="radio" name="ecivil"id="ecivil" value="viudo">viudo
+       <fieldset><legend>informacion de estudio y otros</legend>
+        <label for="colores">color favorito</label>
+        <input type="color" id="colores">
+        <label for="dateInsc">fecha de inscripicion y hora</label>
+        <input type="date" id="start" name="trip-start" value="2022-08-03" min="1950-01-01" max="2100-12-31"><!--date-->
+        <input type="time" id="appt" name="appt"min="0:00" max="24:00" required><!--time-->
+        <br><br>
+        <label for="phone">Ingresar numero de telefono:</label><!--tel-->
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        <small>Numero:(+57)123-456-7890</small>
+        <br><br>
+        <label for="week">Escoja una semana entre Enero o Diciembre:</label><!--week-->
+        <input type="week" name="week" id="camp-week" min="1950-W18" max="2100-W26" required>
+        <br><br>
+        <label for="url">Ingrese una https:// URL:</label><!--url-->
+        <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30" required>
+        <br><br>
+        <form>
+            <div class="controls">        
+                <label for="id">User ID:</label><!--reset-->
+                <input type="text" id="id" name="id" />        
+                <input type="reset" value="Reset">
+                <input type="submit" value="Submit">        
+            </div>
+            <br>
+            <label for="ice-cream-choice">Elige un sabor de malteada:</label><!--datalist-->
+            <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+            <datalist id="ice-cream-flavors">
+                <option value="Chocolate">
+                <option value="Coco">
+                <option value="Menta">
+                <option value="fresa">
+                <option value="Vainilla">
+            </datalist>
+        </form>
+        <p>Audio:</p> <!--range---->
+
+<div>
+  <input type="range" id="volume" name="volume"
+         min="0" max="100">
+  <label for="volume">Volume</label>
+</div>
+
+<div>
+  <input type="range" id="cowbell" name="cowbell" 
+         min="0" max="100" value="90" step="10">
+  <label for="cowbell">Cowbell</label>
+</div>
+       </fieldset>
+       <br><br>
+       <label for="story">Cuentanos tu historia:</label> <!--textarea-->
+       <textarea id="story" name="story" rows="5" cols="33">
+        era una noche oscura y tormentosa...</textarea>
+        <br><br>
+       <hr>
+       <label for="lenguajes">lenguajes de programacion</label>
+       <select id="lenguajes" name="lenguajes">
+          <optgroup label="lenguajes no tipados">
+            <option value="java">java</option>
+            <option value="csharp">c#</option>
+            <option value="c">c++</option>
+          </optgroup>
+          <optgroup label="lenguajes no tipados">
+            <option value="python"></option>
+            <option value="javascript"></option>
+          </optgroup>
+       </select>
+       <br><br>
+       <form>
+        <div>
+          <label for="title">titulo de entrada:</label> <!--hiddent-->
+          <input type="text" id="title" name="title" value="Halo">
+        </div>
+        <div>
+          <label for="content">contenido del blog:</label>
+          <textarea id="content" name="content" cols="60" rows="5">
+            Este es el contenido de la entrada del blog. ¡Espero que lo disfruten!
+          </textarea>
+        </div>
+        <div>
+          <button type="submit">Actualizar publicación</button>
+        </div>
+        <input type="hidden" id="postId" name="postId" value="34657">
+      </form>
+      <br><br>
+       <label for="acepta">aceptar terminos</label>
+       <input type="chackbox" id="terminos">
+       <hr>
+       <input type="submit" value="envio de datos"><!--php-->
+       <button id="validar">validar</button><!--js-->
+      
+    </form>
+    <script src="./backend/scripts/main.js"></script>
+</body>
+</html>
